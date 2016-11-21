@@ -1,0 +1,40 @@
+<form name="userForm" flex class="md-padding">
+
+
+  <div flex-gt-xs>
+    <label>Last year you attended High School</label><br />
+    <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+  </div>
+
+
+  <label>Did you attend high school in New Zealand?</label>
+  <md-radio-group ng-model="data.didAttendHighSchoolInNz">
+
+    <md-radio-button value="true">Yes</md-radio-button>
+    <md-radio-button value="false"> No </md-radio-button>
+
+  </md-radio-group>
+
+
+  <md-input-container class="md-block" flex-gt-sm>
+    <label>High School Attended</label>
+    <md-select ng-model="data.highSchoolAttended" class="md-no-underline">
+      <md-option value="abg">Auckland Boys Grammar</md-option>
+    </md-select>
+  </md-input-container>
+
+  <md-input-container class="md-block" flex-gt-sm>
+    <label>Country of High School Attended</label>
+    <md-select ng-model="data.countryOfHighSchool" class="md-no-underline">
+      <md-option value="NZ">New Zealand</md-option>
+    </md-select>
+  </md-input-container>
+
+  <md-input-container class="md-block" flex-gt-sm>
+    <label>Highest High School Qualification Achieved</label>
+    <md-select ng-model="data.highestHighSchoolQual" class="md-no-underline">
+      <md-option value="IGCSE">IGCSE</md-option>
+    </md-select>
+  </md-input-container>
+
+</form>

@@ -2,7 +2,10 @@
 <!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="myApp" class="no-js">
+<!--<![endif]-->
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,33 +14,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
   <link rel="stylesheet" href="app.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
-<body>
-  <ul class="menu">
-    <li><a href="#!/view1">view1</a></li>
-    <li><a href="#!/view2">view2</a></li>
-  </ul>
 
+<body>
+  <div ng-controller="AppCtrl">
+    <md-content class="md-padding">
+      <md-nav-bar hide-xs md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+        <md-nav-item md-nav-href="#employer-details" name="page1">Employer Details</md-nav-item>
+        <md-nav-item md-nav-href="#trainee-details" name="page2">Trainee / Apprentice Details</md-nav-item>
+        <md-nav-item md-nav-href="#personal-details" name="page25">Personal Details</md-nav-item>
+        <md-nav-item md-nav-href="#education" name="page3">Prior Education</md-nav-item>
+        <md-nav-item md-nav-href="#identity" name="page4">Proof of Identity</md-nav-item>
+        <md-nav-item md-nav-href="#signature" name="page5">Signature</md-nav-item>
+        <md-nav-item md-nav-href="#checklist" name="page6">Checklist</md-nav-item>
+      </md-nav-bar>
+      <md-menu hide-gt-xs>
+        <!-- Trigger element is a md-button with an icon -->
+        <md-button ng-click="$mdOpenMenu($event)" class="md-icon-button" aria-label="Open sample menu">
+          <img src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png" width="32px" alt="">
+        </md-button>
+        <md-menu-content style="height:500px;">
+          <md-menu-item layout="column" flex >
+            <md-button md-nav-href="#employer-details">Employer Details</md-button>
+            <md-button md-nav-href="#employer-details">Trainee / Apprentice Details</md-button>
+            <md-button md-nav-href="#employer-details">Personal Details</md-button>
+            <md-button md-nav-href="#employer-details">Prior Education</md-button>
+            <md-button md-nav-href="#employer-details">Proof of Identity</md-button>
+            <md-button md-nav-href="#employer-details">Signature</md-button>
+            <md-button md-nav-href="#employer-details">Checklist</md-button>
+          </md-menu-item>
+        </md-menu-content>
+      </md-menu>
+    </md-content>
+  </div>
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
-  <div ng-view></div>
-
-  <div>Angular seed app: v<span app-version></span></div>
+  <div ng-view layout="row"></div>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/firebase/firebase.js"></script>
+  <script src="bower_components/angularfire/dist/angularfire.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-aria/angular-aria.js"></script>
+  <script src="bower_components/angular-material/angular-material.js"></script>
   <script src="app.js"></script>
   <script src="view1/view1.js"></script>
   <script src="view2/view2.js"></script>
+  <script src="view2.5/view2.js"></script>
+  <script src="view3/view2.js"></script>
+  <script src="view4/view2.js"></script>
+  <script src="view5/view2.js"></script>
+  <script src="view6/view2.js"></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
 </body>
+
 </html>

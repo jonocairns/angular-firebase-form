@@ -1,5 +1,78 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+<form name="userForm" flex class="md-padding">
+
+  <md-input-container class="md-block" flex-gt-sm>
+    <label>First Name</label>
+    <input ng-model="data.firstName">
+  </md-input-container>
+
+  <md-input-container class="md-block" flex-gt-sm>
+    <label>Middle Name</label>
+    <input ng-model="data.middleName">
+  </md-input-container>
+
+  <md-input-container class="md-block" flex-gt-sm>
+    <label>Last Name</label>
+    <input ng-model="data.lastName">
+  </md-input-container>
+
+  <md-input-container class="md-block" flex-gt-sm>
+    <label>Previous / Maiden Name</label>
+    <input ng-model="data.previousName">
+  </md-input-container>
+
+  <md-input-container class="md-block" flex-gt-sm>
+    <label>Home Phone</label>
+    <input ng-model="data.homePhone">
+  </md-input-container>
+
+  <md-input-container class="md-block" flex-gt-sm>
+    <label>MobilePhone</label>
+    <input ng-model="data.mobilePhone">
+  </md-input-container>
+
+  <md-input-container class="md-block">
+    <input ng-model="data.traineeEmail" type="email" placeholder="Email (required)" ng-required="true">
+  </md-input-container>
+
+
+  <div>
+    <md-input-container class="md-block">
+      <label>Address</label>
+      <input ng-model="data.address">
+    </md-input-container>
+
+    <md-input-container md-no-float class="md-block">
+      <input ng-model="data.address2" placeholder="Address 2">
+    </md-input-container>
+
+    <div layout-gt-sm="row">
+      <md-input-container class="md-block" flex-gt-sm>
+        <label>City</label>
+        <input ng-model="data.city">
+      </md-input-container>
+
+      <md-input-container class="md-block" flex-gt-sm>
+        <label>Country</label>
+        <md-select ng-model="data.country">
+          <md-option ng-repeat="country in countries" value="{{country}}">
+            {{country}}
+          </md-option>
+        </md-select>
+      </md-input-container>
+
+      <md-input-container class="md-block" flex-gt-sm>
+        <label>Postal Code</label>
+        <input name="postalCode" ng-model="data.postalCode" placeholder="12345" required ng-pattern="/^[0-9]{5}$/" md-maxlength="5">
+
+        <div ng-messages="userForm.postalCode.$error" role="alert" multiple>
+          <div ng-message="required" class="my-message">You must supply a postal code.</div>
+          <div ng-message="pattern" class="my-message">That doesn't look like a valid postal code.
+          </div>
+          <div ng-message="md-maxlength" class="my-message">
+            Don't use the long version silly...we don't need to be that specific...
+          </div>
+        </div>
+      </md-input-container>
+    </div>
+  </div>
+</form>

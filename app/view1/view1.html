@@ -1,1 +1,42 @@
-<p>This is the partial for view 1.</p>
+<form name="userForm" flex class="md-padding">
+
+    <md-input-container class="md-block" flex-gt-sm>
+        <label>Company Name</label>
+        <input ng-model="data.company">
+    </md-input-container>
+
+    <md-input-container class="md-block" flex-gt-sm>
+        <label>Contact</label>
+        <input ng-model="data.contact">
+    </md-input-container>
+
+    <md-input-container class="md-block" flex-gt-sm>
+        <label>Job Title</label>
+        <input ng-model="data.jobTitle">
+    </md-input-container>
+
+    <md-input-container class="md-block" flex-gt-sm>
+        <label>Contact Phone</label>
+        <input ng-model="data.contactPhone">
+    </md-input-container>
+
+    <md-input-container class="md-block">
+      <input ng-model="data.companyEmail" type="email" placeholder="Email (required)" ng-required="true">
+    </md-input-container>
+
+    <md-input-container class="md-block" flex-gt-sm>
+        <label>Site / Department</label>
+        <input ng-model="data.site">
+    </md-input-container>
+
+    <md-input-container class="md-block" flex-gt-sm>
+        <label>Reporting Manager / Supervisor</label>
+        <input ng-model="data.super">
+    </md-input-container>
+
+    <md-input-container class="md-block" flex-gt-sm>
+        <label>Manager Contact Phone</label>
+        <input ng-model="data.site">
+    </md-input-container>
+
+</form>

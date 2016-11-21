@@ -1,0 +1,75 @@
+<form name="userForm" flex class="md-padding">
+
+  <div layout="row">
+    <md-input-container class="md-block" flex-gt-sm>
+      <label>Gender</label>
+      <md-select ng-model="data.gender" class="md-no-underline">
+        <md-option value="male">Male</md-option>
+        <md-option value="female">Female</md-option>
+      </md-select>
+    </md-input-container>
+
+    <md-input-container class="md-block" flex-gt-sm>
+      <label>Date of Birth</label>
+      <md-datepicker ng-model="date"></md-datepicker>
+    </md-input-container>
+  </div>
+
+
+  <md-input-container class="md-block" flex-gt-sm>
+    <label>Next of Kin</label>
+    <input ng-model="data.nextOfKin">
+  </md-input-container>
+
+
+  <md-input-container class="md-block" flex-gt-sm>
+    <label>Language Spoken at Home</label>
+    <md-select ng-model="data.language" class="md-no-underline">
+      <md-option value="English">English</md-option>
+      <md-option value="Other">other</md-option>
+    </md-select>
+  </md-input-container>
+
+  <label>Do you have a disability that may affect your learning?</label>
+  <div layout="row" layout-align="start">
+    <md-checkbox ng-model="data.isHearingImpared">Hearing</md-checkbox>
+    <md-checkbox ng-model="data.isSightImpared">Sight</md-checkbox>
+    <md-checkbox ng-model="data.isVoiceImpared">Voice</md-checkbox>
+    <md-checkbox ng-model="data.isOtherImpared">Other</md-checkbox>
+  </div>
+
+  <md-input-container class="md-block" flex-gt-sm>
+    <label>Ethnicity</label>
+    <md-select ng-model="data.ethnicity" placeholder="Ethnicity" class="md-no-underline">
+      <md-option value="British">British</md-option>
+      <md-option value="Irish">Irish</md-option>
+      <md-option value="nzMaori">NZ Maori</md-option>
+    </md-select>
+  </md-input-container>
+
+  <div ng-if="data.ethnicity === 'nzMaori'">
+    <div layout="row" layout-align="start">
+      <md-checkbox ng-model="data.dontKnowIwi">Don't know Iwi</md-checkbox>
+    </div>
+
+    <md-input-container class="md-block" flex-gt-sm>
+      <label>Iwi</label>
+      <md-select ng-model="data.iwi" class="md-no-underline">
+        <md-option value="0100">Te Aupōuri (0100)</md-option>
+        <md-option value="0102">Ngāti Kahu (0102)</md-option>
+      </md-select>
+    </md-input-container>
+
+    <md-input-container class="md-block" flex-gt-sm>
+      <label>Rohe (Iwi Region)</label>
+      <md-select ng-model="data.rohe" class="md-no-underline">
+        <md-option value="teTaiTokerau">Te Tai Tokerau</md-option>
+        <md-option value="tamaki">Tāmaki</md-option>
+        <md-option value="hauraki">Hauraki</md-option>
+        <md-option value="tainui">Tainui</md-option>
+      </md-select>
+    </md-input-container>
+  </div>
+
+  </div>
+</form>
