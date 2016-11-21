@@ -1,1 +1,1 @@
-web: http-server -a localhost -p $PORT -c-1 ./app
+web: http-server -p $PORT -c-1 ./app
