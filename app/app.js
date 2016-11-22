@@ -13,7 +13,8 @@ angular.module('myApp', [
   'myApp.version',
   'firebase',
   'ngMaterial',
-  'ngAnimate'
+  'ngAnimate',
+  'ngFileUpload'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   //$locationProvider.hashPrefix('!');

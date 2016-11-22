@@ -1,2 +1,38 @@
-<p>Not ready yet!</p>
+<div layout="row" flex>
+    <div flex-gt-xs md-content layout-padding layout="row">
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>Residency</label>
+            <md-select ng-model="data.residency" class="md-no-underline">
+                <md-option value="nzCitizen">NZ Citizen</md-option>
+                <md-option value="auscitizen">Australian Citizen</md-option>
+                <md-option value="permres">NZ Permanent Resident</md-option>
+                <md-option value="other">Other</md-option>
+            </md-select>
+        </md-input-container>
 
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>Permit Expiry</label>
+            <md-datepicker ng-model="d"></md-datepicker>
+        </md-input-container>
+    </div>
+
+    <div flex-gt-xs md-content layout-padding>
+        <label>Passport / Birth Certificate</label>
+        <div ngf-drop ngf-select ng-model="files" class="drop-box" ngf-drag-over-class="'dragover'" ngf-multiple="false" ngf-allow-dir="true"
+            accept="image/*,application/pdf" ngf-pattern="'image/*,application/pdf'">Drop pdfs or images here or click to upload</div>
+        <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+        <div>
+            <md-button ng-click="upload()">Save</md-button>
+
+            <div ng-if="files">
+                <h4>Preview</h4>
+                <img flex width="300" ngf-src="files || ''">
+            </div>
+
+            <div ng-if="existingFile">
+                <h4>Saved</h4>
+                <img width="300" flex ng-src="{{existingFile}}">
+            </div>
+        </div>
+    </div>
+</div>
