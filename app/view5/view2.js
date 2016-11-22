@@ -33,20 +33,12 @@ angular.module('myApp.view5', ['ngRoute'])
 
       $scope.upload = function () {
         var dataurl = signaturePad.toDataURL();
-        var blob = $scope.dataToBlob(dataurl);
+        var encoded = dataurl.split(",")[1];
 
-        ref.put(blob).then(function (snapshot) {
+        ref.putString(encoded, 'base64').then(function (snapshot) {
           console.log('Uploaded a blob or file!');
           $scope.load();
         });
       }
 
-      $scope.dataToBlob = function (dataurl) {
-        var arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
-          bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
-        while (n--) {
-          u8arr[n] = bstr.charCodeAt(n);
-        }
-        return new Blob([u8arr], { type: mime });
-      }
     }]);
