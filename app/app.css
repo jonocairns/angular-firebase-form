@@ -33,3 +33,15 @@
     padding-top: 25px;
     margin: 10px;
 }
+
+md-progress-linear.md-default-theme .md-bar, md-progress-linear .md-bar {
+    background-color: #daba87 !important;
+}
+
+progress-linear .md-bar {
+    background-color: #daba87 !important;
+}
+
+md-progress-linear .md-container {
+    background-color: rgb(243,234,218) !important;;
+}
