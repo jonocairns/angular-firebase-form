@@ -1,1 +1,24 @@
-<p>Not ready yet!</p>
+<form name="userForm" flex class="md-padding">
+    <label>Make sure you've completed everything!</label>
+
+    <div layout="column" layout-align="start">
+        <md-checkbox ng-model="data.employerdetailscomplete">Employer details filled out</md-checkbox>
+        <md-checkbox ng-model="data.traineedetailscomplete">Trainee / Apprentice details complete</md-checkbox>
+        <md-checkbox ng-model="data.personalDetailsComplete">Personal Details completed</md-checkbox>
+        <md-checkbox ng-model="data.idssubmittedandvalidated">IDs submitted and validated</md-checkbox>
+        <md-checkbox ng-model="data.trainingplanselected">Training plan selected</md-checkbox>
+        <md-checkbox ng-model="data.signaturesquired">Signatures aquired</md-checkbox>
+    </div>
+
+    <div>
+        <p>This form is 87% complete</p>
+        <md-chips>
+            <md-chip>ID still needs to be verified by CSC</md-chip>
+            <md-chip>Signatures still required</md-chip>
+            <md-chip>Learner phone number required</md-chip>
+            <md-chip>Learner last name required</md-chip>
+        </md-chips>
+    </div>
+    <md-button ng-disabled="true" class="md-raised md-primary">Complete</md-button>
+
+</form>

@@ -21,7 +21,8 @@
 
 <body>
   <div ng-controller="AppCtrl">
-    <md-content class="md-padding">
+    <md-content class="md-padding" layout="row">
+      <img src="cz.png" style="width:176px;height:30px;margin-top:7px;margin-right:50px;"/>
       <md-nav-bar hide-xs md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
         <md-nav-item md-nav-href="#employer-details" name="page1">Employer Details</md-nav-item>
         <md-nav-item md-nav-href="#trainee-details" name="page2">Trainee / Apprentice Details</md-nav-item>
@@ -30,7 +31,11 @@
         <md-nav-item md-nav-href="#identity" name="page4">Proof of Identity</md-nav-item>
         <md-nav-item md-nav-href="#signature" name="page5">Signature</md-nav-item>
         <md-nav-item md-nav-href="#checklist" name="page6">Checklist</md-nav-item>
+
       </md-nav-bar>
+
+      <md-button ng-click="toggleRight()" class="md-raised md-primary" style="float:right;">Messages</md-button>
+
       <md-menu hide-gt-xs>
         <!-- Trigger element is a md-button with an icon -->
         <md-button ng-click="$mdOpenMenu($event)" class="md-icon-button" aria-label="Open sample menu">
@@ -56,6 +61,47 @@
 
   <div ng-view layout="row"></div>
 
+  <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">
+
+    <md-toolbar class="md-theme-light">
+      <h1 class="md-toolbar-tools">Messages</h1>
+    </md-toolbar>
+    <md-content ng-controller="RightCtrl" layout-padding>
+
+      <md-list flex>
+        <md-list-item class="md-3-line" ng-repeat="item in messages" ng-click="null">
+          <div class="md-list-item-text" layout="column">
+            <p>{{ item.user || 'someone'}}: {{ item.text }}</p><p style="font-size:10px">sent at 3:43PM 23/11/2016</p>
+          </div>
+        </md-list-item>
+        <md-divider></md-divider>
+      </md-list>
+
+      <form layout="column">
+        <md-input-container flex>
+          <label for="testInput">Message</label>
+          <input type="text" id="testInput" ng-model="message" md-autofocus>
+
+        </md-input-container>
+
+        <div layout="row">
+          <md-button ng-click="close()" class="md-primary">
+            Close Messages
+          </md-button>
+          <md-button flex ng-click="send()">Send</md-button>
+        </div>
+
+
+      </form>
+
+
+    </md-content>
+
+  </md-sidenav>
+
+  <div ng-controller="AppCtrl">
+    <md-progress-linear style="position: fixed;top: 0px;" md-mode="determinate" value="{{determinateValue}}"></md-progress-linear>
+  </div>
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
